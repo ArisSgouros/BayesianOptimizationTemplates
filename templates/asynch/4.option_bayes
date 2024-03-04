@@ -1,0 +1,14 @@
+log_out	4.res.json
+seed	1
+flag    sim_bayesian
+log_in	123.res.json
+bounds  i.bound
+verbose	2
+kind	ucb # upper confidence bound
+#kind	ei : expected improvement
+#kind	poi: probability of improvement
+xi	0.1
+kappa	2.5
+alpha	1e-6
+nsearch	0
+nbayes	5

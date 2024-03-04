@@ -1,0 +1,14 @@
+log_out	2.res.json
+seed	2
+flag    sim_rnd_2
+#log_in	i.res.json
+bounds  i.bound
+verbose	2
+kind	ucb # upper confidence bound
+#kind	ei : expected improvement
+#kind	poi: probability of improvement
+xi	0.1
+kappa	2.5
+alpha	1e-6
+nsearch	10
+nbayes	0
