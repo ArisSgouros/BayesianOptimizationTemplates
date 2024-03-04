@@ -1,0 +1,13 @@
+log_out	2.res.json
+log_in	1.res.json
+bounds  2.bound
+seed	1234
+verbose	2
+kind	ucb # upper confidence bound
+#kind	ei : expected improvement
+#kind	poi: probability of improvement
+xi	0.1
+kappa	2.5
+alpha	1e-6
+nsearch	0
+nbayes	10
