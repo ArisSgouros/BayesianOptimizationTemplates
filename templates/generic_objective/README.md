@@ -20,5 +20,17 @@ The folder includes the following files and directories:
  - run.sh       -> bash script for executing the optimization
 
 # Notes
-main.py optimizes a generic objective function (objective.py).
-The parameters for the first (second) optimization are in 1(2).option.
+Optimize an objective function (OF) with arbitrary implementation (objective.py).
+The OF constants are initialized before the optimization.
+
+The parameters and bounds regarding the first (second) optimization are
+in files 1(2).option and 1(2).bound, respectively.
+
+First optimization:
+   the OF is evaluated 5 times (randomly) within the specified bounds
+   the OF is subjected to Bayesian Optimization for additional 5 steps
+   the results are exported to file 1.res.json
+
+Second optimization:
+   the results of the first optimization are imported from file 1.res.json
+   the OF is subjected to Bayesian Optimization for 10 steps
