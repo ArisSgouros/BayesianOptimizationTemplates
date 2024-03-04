@@ -1,0 +1,5 @@
+The Conda environment packages are specified in the bayes.yml file.
+
+To create the environment, execute the following command:
+
+   conda env create -f bayes.yml

@@ -1,0 +1,7 @@
+name: bayes
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - scipy>=1.12
+  - bayesian-optimization
