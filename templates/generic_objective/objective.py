@@ -3,7 +3,7 @@ p1 = None
 p2 = None
 
 # Initialize contant parameters of the objective function
-def Init():
+def Init(pp):
    global p1
    global p2
    p1, p2 = 1.0, 1.0

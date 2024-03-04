@@ -52,7 +52,7 @@ if __name__ == "__main__":
    pbounds = ParseBound(pp['bounds'])
 
    print("Objective function initialization..")
-   obj.Init()
+   obj.Init(pp)
 
    optimizer = BayesianOptimization(
       f=None,
