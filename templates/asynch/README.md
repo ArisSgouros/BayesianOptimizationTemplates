@@ -1,5 +1,5 @@
 # Generic Objective
-Template for parallel initial search and serial Bayessian optimization of a generic objective function
+Template for parallel initial search and serial Bayesian optimization of a generic objective function
 
 # Author
 - Dr. Aristotelis P. Sgouros (arissgouros@gmail.com)
