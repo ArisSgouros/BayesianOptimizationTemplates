@@ -88,7 +88,7 @@ if __name__ == "__main__":
          params=probe,
          target=target,
       )
-      print(probe, target)
+      print('  ', probe, target)
 
    # optimization section
    print('Bayesian optimization for %d steps:' % (pp['nbayes']))
@@ -99,10 +99,10 @@ if __name__ == "__main__":
          params=probe,
          target=target,
       )
-      print(probe, target)
+      print('  ', probe, target)
 
    probe, target = optimizer.max['params'], optimizer.max['target']
    print('Optimum probe:')
    for key in probe:
       print('   %s %f' % (key, probe[key]))
-   print('Optimum value:\n   ', target)
+   print('Optimum value:\n  ', target)
