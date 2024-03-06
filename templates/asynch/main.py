@@ -20,6 +20,16 @@ def ParseOptions(file):
          if line[0] == '#': continue
          tmp = line.split()
          options[tmp[0]] = tmp[1]
+
+   # assign the proper variable types
+   options['seed'] = int(options['seed'])
+   options['verbose'] = int(options['verbose'])
+   options['xi'] = float(options['xi'])
+   options['kappa'] = float(options['kappa'])
+   options['alpha'] = float(options['alpha'])
+   options['nsearch'] = int(options['nsearch'])
+   options['nbayes'] = int(options['nbayes'])
+
    return options
 
 def ParseBound(file):
@@ -31,15 +41,6 @@ def ParseBound(file):
          lst = line.split()
          key, min_, max_ = lst[0], float(lst[1]), float(lst[2])
          bounds[key] = (min_, max_)
-
-   # assign the proper variable types
-   pp['seed'] = int(pp['seed'])
-   pp['verbose'] = int(pp['verbose'])
-   pp['xi'] = float(pp['xi'])
-   pp['kappa'] = float(pp['kappa'])
-   pp['alpha'] = float(pp['alpha'])
-   pp['nsearch'] = int(pp['nsearch'])
-   pp['nbayes'] = int(pp['nbayes'])
    return bounds
 
 if __name__ == "__main__":
