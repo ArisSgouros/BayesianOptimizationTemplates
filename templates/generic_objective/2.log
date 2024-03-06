@@ -7,7 +7,7 @@ Optimization parameters:
     kind ucb
     xi 0.1
     kappa 2.5
-    alpha 1e-6
+    alpha 1e-06
     nsearch 0
     nbayes 10
 Reading bounds from: 2.bound
