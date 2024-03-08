@@ -1,5 +1,6 @@
 import sys
 import argparse
+import json
 import numpy as np
 from bayes_opt import BayesianOptimization
 from bayes_opt.logger import JSONLogger
@@ -12,7 +13,16 @@ parser = argparse.ArgumentParser()
 parser.add_argument('options', type=str, help='Path of the parameter file')
 
 def ParseOptions(file):
+   # default values
    options = {}
+   options['seed'] = '1'
+   options['verbose'] = '2'
+   options['kind'] = 'ucb'
+   options['xi'] = '0.1'
+   options['kappa'] = '2.5'
+   options['alpha'] = '1e-6'
+   options['nsearch'] = '0'
+   options['nbayes'] = '0'
    with open(file, 'r') as foo:
       while True:
          line = foo.readline()
@@ -20,16 +30,6 @@ def ParseOptions(file):
          if line[0] == '#': continue
          tmp = line.split()
          options[tmp[0]] = tmp[1]
-
-   # assign the proper variable types
-   options['seed'] = int(options['seed'])
-   options['verbose'] = int(options['verbose'])
-   options['xi'] = float(options['xi'])
-   options['kappa'] = float(options['kappa'])
-   options['alpha'] = float(options['alpha'])
-   options['nsearch'] = int(options['nsearch'])
-   options['nbayes'] = int(options['nbayes'])
-
    return options
 
 def ParseBound(file):
@@ -42,6 +42,14 @@ def ParseBound(file):
          key, min_, max_ = lst[0], float(lst[1]), float(lst[2])
          bounds[key] = (min_, max_)
    return bounds
+
+def ParseProbe(file):
+   with open(file, 'r') as foo:
+      lines = foo.readlines()
+   probes = []
+   for line in lines:
+      probes.append(json.loads(line))
+   return probes
 
 if __name__ == "__main__":
    pp = ParseOptions(parser.parse_args().options)
@@ -59,10 +67,10 @@ if __name__ == "__main__":
       f=None,
       pbounds=pbounds,
       verbose=pp['verbose'],
-      random_state=pp['seed'],
+      random_state=int(pp['seed']),
    )
 
-   utility = UtilityFunction(kind=pp['kind'], kappa=pp['kappa'], xi=pp['xi'])
+   utility = UtilityFunction(kind=pp['kind'], kappa=float(pp['kappa']), xi=float(pp['xi']))
 
    # Export log
    if 'log_out' in pp:
@@ -75,10 +83,22 @@ if __name__ == "__main__":
       print('Importing from %s:' % (pp['log_in']))
       load_logs(optimizer, logs=[pp['log_in']]);
 
+   # probe section
+   probes = {}
+   if 'probes' in pp:
+      probes = ParseProbe(pp['probes'])
+   for probe in probes:
+      target = obj.Function(**probe)
+      optimizer.register(
+         params=probe,
+         target=target,
+      )
+      print('  ', probe, target)
+
    # search section
-   print('Random search for %d steps:' % (pp['nsearch']))
-   np.random.seed(pp['seed'])
-   for ii in range(pp['nsearch']):
+   print('Random search for %s steps:' % (pp['nsearch']))
+   np.random.seed(int(pp['seed']))
+   for ii in range(int(pp['nsearch'])):
       probe = {}
       for key in pbounds:
          min_ = pbounds[key][0]
@@ -92,8 +112,8 @@ if __name__ == "__main__":
       print('  ', probe, target)
 
    # optimization section
-   print('Bayesian optimization for %d steps:' % (pp['nbayes']))
-   for step in range(pp['nbayes']):
+   print('Bayesian optimization for %s steps:' % (pp['nbayes']))
+   for step in range(int(pp['nbayes'])):
       probe = optimizer.suggest(utility)
       target = obj.Function(**probe)
       optimizer.register(
