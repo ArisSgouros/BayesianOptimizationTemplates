@@ -1,5 +1,6 @@
 import sys
 import argparse
+import json
 import numpy as np
 from bayes_opt import BayesianOptimization
 from bayes_opt.logger import JSONLogger
@@ -42,6 +43,14 @@ def ParseBound(file):
          bounds[key] = (min_, max_)
    return bounds
 
+def ParseProbe(file):
+   with open(file, 'r') as foo:
+      lines = foo.readlines()
+   probes = []
+   for line in lines:
+      probes.append(json.loads(line))
+   return probes
+
 if __name__ == "__main__":
    pp = ParseOptions(parser.parse_args().options)
    print("Optimization parameters:")
@@ -73,6 +82,18 @@ if __name__ == "__main__":
    if 'log_in' in pp:
       print('Importing from %s:' % (pp['log_in']))
       load_logs(optimizer, logs=[pp['log_in']]);
+
+   # probe section
+   probes = {}
+   if 'probes' in pp:
+      probes = ParseProbe(pp['probes'])
+   for probe in probes:
+      target = obj.Function(**probe)
+      optimizer.register(
+         params=probe,
+         target=target,
+      )
+      print('  ', probe, target)
 
    # search section
    print('Random search for %s steps:' % (pp['nsearch']))
