@@ -11,3 +11,6 @@ cat 1.res.json 2.res.json 3.res.json > 123.res.json
 
 # Conduct the Bayesian optimization
 python main.py 4.option_bayes
+
+# Merge the exports
+python ../../tool/merge_json.py > merge.res.json
