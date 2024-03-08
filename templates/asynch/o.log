@@ -1,15 +1,15 @@
 Optimization parameters:
-    log_out 3.res.json
     seed 3
-    flag sim_rnd_3
-    bounds i.bound
     verbose 2
     kind ucb
     xi 0.1
     kappa 2.5
-    alpha 1e-06
+    alpha 1e-6
     nsearch 10
     nbayes 0
+    log_out 3.res.json
+    flag sim_rnd_3
+    bounds i.bound
 Reading bounds from: i.bound
 Objective function initialization..
 Exporting to 3.res.json:
@@ -24,7 +24,6 @@ Random search for 10 steps:
    {'x': -2.0909526108705565, 'y': 0.10827605197663015} -4.1672561
    waiting sim sim_rnd_3 ..
    waiting sim sim_rnd_3 ..
-   waiting sim sim_rnd_3 ..
    {'x': 3.9294695434765465, 'y': 3.9629308893343804} -23.2196946
    waiting sim sim_rnd_3 ..
    waiting sim sim_rnd_3 ..
@@ -36,19 +35,18 @@ Random search for 10 steps:
    {'x': -4.485327966991701, 'y': -0.5919015634936358} -21.6523192
    waiting sim sim_rnd_3 ..
    waiting sim sim_rnd_3 ..
-   waiting sim sim_rnd_3 ..
    {'x': -4.701237891214331, 'y': -0.43166775605288876} -23.151312
+   waiting sim sim_rnd_3 ..
    waiting sim sim_rnd_3 ..
    waiting sim sim_rnd_3 ..
    {'x': 1.4914404761476074, 'y': -2.215127173520247} -11.5614349
    waiting sim sim_rnd_3 ..
    waiting sim sim_rnd_3 ..
+   waiting sim sim_rnd_3 ..
    {'x': 1.7625490198013125, 'y': 0.9086281741635087} -2.1149278
    waiting sim sim_rnd_3 ..
    waiting sim sim_rnd_3 ..
-   waiting sim sim_rnd_3 ..
    {'x': -4.760181176228347, 'y': 0.5885408799088196} -21.8286217
-   waiting sim sim_rnd_3 ..
    waiting sim sim_rnd_3 ..
    waiting sim sim_rnd_3 ..
    waiting sim sim_rnd_3 ..
@@ -60,21 +58,22 @@ Optimum probe:
 Optimum value:
    -0.4276373
 Optimization parameters:
-    log_out 2.res.json
     seed 2
-    flag sim_rnd_2
-    bounds i.bound
     verbose 2
     kind ucb
     xi 0.1
     kappa 2.5
-    alpha 1e-06
+    alpha 1e-6
     nsearch 10
     nbayes 0
+    log_out 2.res.json
+    flag sim_rnd_2
+    bounds i.bound
 Reading bounds from: i.bound
 Objective function initialization..
 Exporting to 2.res.json:
 Random search for 10 steps:
+   waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
@@ -90,7 +89,9 @@ Random search for 10 steps:
    waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
+   waiting sim sim_rnd_2 ..
    {'x': -2.953513659621575, 'y': 1.192709663506637} -7.7603821
+   waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
@@ -101,7 +102,10 @@ Random search for 10 steps:
    {'x': 1.2113383276929488, 'y': 0.2914209427703902} -0.9694239
    waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
+   waiting sim sim_rnd_2 ..
    {'x': -3.6542005465506646, 'y': 0.13578121265746468} -13.1000594
+   waiting sim sim_rnd_2 ..
+   waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
    waiting sim sim_rnd_2 ..
    {'x': -3.155601343530847, 'y': 2.8533514781667346} -12.3927276
@@ -121,17 +125,17 @@ Optimum probe:
 Optimum value:
    -0.9694239
 Optimization parameters:
-    log_out 1.res.json
     seed 1
-    flag sim_rnd_1
-    bounds i.bound
     verbose 2
     kind ucb
     xi 0.1
     kappa 2.5
-    alpha 1e-06
+    alpha 1e-6
     nsearch 10
     nbayes 0
+    log_out 1.res.json
+    flag sim_rnd_1
+    bounds i.bound
 Reading bounds from: i.bound
 Objective function initialization..
 Exporting to 1.res.json:
@@ -146,7 +150,6 @@ Random search for 10 steps:
    {'x': -4.998856251826551, 'y': -1.9766742736816023} -32.8491494
    waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
-   waiting sim sim_rnd_1 ..
    {'x': -3.5324410918288693, 'y': -4.0766140523120225} -37.2501491
    waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
@@ -155,7 +158,9 @@ Random search for 10 steps:
    waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
+   waiting sim sim_rnd_1 ..
    {'x': -1.0323252576933006, 'y': 0.38816734003356945} -0.4400345
+   waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
@@ -163,7 +168,10 @@ Random search for 10 steps:
    waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
+   waiting sim sim_rnd_1 ..
    {'x': -2.9554775026848255, 'y': 3.7811743639094537} -15.469779
+   waiting sim sim_rnd_1 ..
+   waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
    waiting sim sim_rnd_1 ..
@@ -184,18 +192,18 @@ Optimum probe:
 Optimum value:
    0.1454971
 Optimization parameters:
-    log_out 4.res.json
     seed 1
-    flag sim_bayesian
-    log_in 123.res.json
-    bounds i.bound
     verbose 2
     kind ucb
     xi 0.1
     kappa 2.5
-    alpha 1e-06
+    alpha 1e-6
     nsearch 0
     nbayes 5
+    log_out 4.res.json
+    flag sim_bayesian
+    log_in 123.res.json
+    bounds i.bound
 Reading bounds from: i.bound
 Objective function initialization..
 Exporting to 4.res.json:
@@ -205,8 +213,8 @@ Bayesian optimization for 5 steps:
    waiting sim sim_bayesian ..
    waiting sim sim_bayesian ..
    waiting sim sim_bayesian ..
-   waiting sim sim_bayesian ..
    {'x': 0.19514552349484832, 'y': 1.0386881478224697} 0.9604213
+   waiting sim sim_bayesian ..
    waiting sim sim_bayesian ..
    waiting sim sim_bayesian ..
    {'x': -0.11533649001064077, 'y': 1.1746136457563991} 0.9562076
@@ -218,6 +226,8 @@ Bayesian optimization for 5 steps:
    waiting sim sim_bayesian ..
    waiting sim sim_bayesian ..
    {'x': -0.026672607696693797, 'y': 0.9969955406147102} 0.9992795
+   waiting sim sim_bayesian ..
+   waiting sim sim_bayesian ..
    waiting sim sim_bayesian ..
    {'x': -0.012580313640358274, 'y': 1.0007245140130308} 0.9998412
 Optimum probe:

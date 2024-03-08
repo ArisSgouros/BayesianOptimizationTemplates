@@ -1,0 +1,25 @@
+Optimization parameters:
+    seed 1
+    verbose 2
+    kind ucb
+    xi 0.1
+    kappa 2.5
+    alpha 1e-6
+    nsearch 0
+    nbayes 0
+    log_out 3.res.json
+    probes 3.probe
+    bounds 1.bound
+Reading bounds from: 1.bound
+Objective function initialization..
+Exporting to 3.res.json:
+   {'x': 1.0, 'y': 1.0} 0.0
+   {'x': 1.0, 'y': 2.0} -1.0
+   {'x': 2.0, 'y': 2.0} -4.0
+Random search for 0 steps:
+Bayesian optimization for 0 steps:
+Optimum probe:
+   x 1.000000
+   y 1.000000
+Optimum value:
+   0.0

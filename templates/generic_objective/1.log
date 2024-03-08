@@ -1,14 +1,14 @@
 Optimization parameters:
-    log_out 1.res.json
-    bounds 1.bound
     seed 1234
     verbose 2
     kind ucb
     xi 0.1
     kappa 2.5
-    alpha 1e-06
+    alpha 1e-6
     nsearch 5
     nbayes 5
+    log_out 1.res.json
+    bounds 1.bound
 Reading bounds from: 1.bound
 Objective function initialization..
 Exporting to 1.res.json:
