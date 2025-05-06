@@ -4,4 +4,4 @@ channels:
   - defaults
 dependencies:
   - scipy>=1.12
-  - bayesian-optimization
+  - bayesian-optimization==1.4.1

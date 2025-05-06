@@ -3,3 +3,6 @@ The Conda environment packages are specified in the bayes.yml file.
 To create the environment, execute the following command:
 
    conda env create -f bayes.yml
+
+Note: the present templates are compatible with the version:
+  - bayesian-optimization==1.4.1
